@@ -9,16 +9,16 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/">
-  <div className="flex items-center space-x-2">
-    <Image
-      src="/images/jara.jpg" // relative to the /public folder
-      alt="JARA GROUPS Logo"
-      width={40} // adjust as needed
-      height={40}
-    />
-    <span className="text-2xl font-bold text-black">JARA GROUPS</span>
-  </div>
-</Link>
+            <div className="flex items-center space-x-2 cursor-pointer">
+              <Image
+                src="/images/JARA.png" // relative to the /public folder
+                alt="JARA GROUPS Logo"
+                width={60} // adjust as needed
+                height={60}
+              />
+              {/* <span className="text-2xl font-bold text-black">JARA GROUPS</span> */}
+            </div>
+          </Link>
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex space-x-8">
@@ -47,10 +47,13 @@ export default function Header() {
             <button className="p-2 text-gray-600 hover:text-black transition-colors">
               <User className="h-5 w-5" />
             </button>
-            <button className="p-2 text-gray-600 hover:text-black transition-colors">
-              <ShoppingBag className="h-5 w-5" />
-            </button>
-            
+
+            <Link href="/cart">
+              <button className="p-2 text-gray-600 hover:text-black transition-colors">
+                <ShoppingBag className="h-5 w-5" />
+              </button>
+            </Link>
+
             {/* Mobile menu button */}
             <button className="md:hidden p-2 text-gray-600 hover:text-black transition-colors">
               <Menu className="h-5 w-5" />

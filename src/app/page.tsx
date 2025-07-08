@@ -15,20 +15,20 @@ export default function HomePage() {
               <div className="max-w-md">
                 <p className="text-sm font-medium text-gray-500 mb-4 tracking-wider uppercase">New Collection</p>
                 <h1 className="text-4xl lg:text-5xl font-light text-black mb-6 leading-tight">
-                  Swiss Precision<br />
+                  Timeless Style<br />
                   <span className="font-bold">Redefined</span>
                 </h1>
                 <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                  Discover timepieces that blend traditional craftsmanship with contemporary design.
+                  Discover clothing that blends contemporary fashion with sustainable craftsmanship.
                 </p>
                 <div className="mb-8">
-                  <span className="text-2xl font-light text-black">From NPR 1,85,000</span>
+                  <span className="text-2xl font-light text-black">From NPR 2,500</span>
                 </div>
                 <Link 
-                  href="/categories/watches"
+                  href="/collections/new-arrivals"
                   className="inline-flex items-center gap-2 text-black font-medium hover:gap-4 transition-all duration-300 group"
                 >
-                  Explore Collection 
+                  Shop New Arrivals 
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -36,12 +36,12 @@ export default function HomePage() {
             <div className="order-1 lg:order-2">
               <div className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="w-64 h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center shadow-2xl">
-                  <span className="text-gray-600 font-medium">LUXURY TIMEPIECE</span>
+                  <span className="text-gray-600 font-medium">PREMIUM APPAREL</span>
                 </div>
                 <div className="absolute top-6 right-6 bg-white px-4 py-2 rounded-full shadow-lg">
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-medium">4.9</span>
+                    <span className="text-sm font-medium">4.8</span>
                   </div>
                 </div>
               </div>
@@ -58,46 +58,46 @@ export default function HomePage() {
               Curated <span className="font-bold">Collections</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Each piece tells a story of exceptional craftsmanship and timeless elegance.
+              Each piece crafted with attention to detail and sustainable materials.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Link href="/categories/watches" className="group">
+            <Link href="/collections/women" className="group">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-500">
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                  <span className="text-2xl">⌚</span>
+                  <span className="text-2xl">👗</span>
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">Timepieces</h3>
-                <p className="text-gray-600 text-sm mb-6">Swiss heritage meets modern precision</p>
+                <h3 className="text-xl font-medium text-black mb-3">Women's Collection</h3>
+                <p className="text-gray-600 text-sm mb-6">Elegant dresses, tops, and bottoms</p>
                 <span className="text-sm text-black font-medium group-hover:underline">
-                  View Collection
+                  Shop Women
                 </span>
               </div>
             </Link>
             
-            <Link href="/categories/jewelry" className="group">
+            <Link href="/collections/men" className="group">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-500">
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                  <span className="text-2xl">💎</span>
+                  <span className="text-2xl">👔</span>
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">Fine Jewelry</h3>
-                <p className="text-gray-600 text-sm mb-6">Precious stones, timeless beauty</p>
+                <h3 className="text-xl font-medium text-black mb-3">Men's Collection</h3>
+                <p className="text-gray-600 text-sm mb-6">Modern shirts, jackets, and trousers</p>
                 <span className="text-sm text-black font-medium group-hover:underline">
-                  View Collection
+                  Shop Men
                 </span>
               </div>
             </Link>
             
-            <Link href="/categories/fashion" className="group">
+            <Link href="/collections/accessories" className="group">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-500">
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                  <span className="text-2xl">👜</span>
+                  <span className="text-2xl">🧣</span>
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">Luxury Fashion</h3>
-                <p className="text-gray-600 text-sm mb-6">Curated designer collections</p>
+                <h3 className="text-xl font-medium text-black mb-3">Accessories</h3>
+                <p className="text-gray-600 text-sm mb-6">Scarves, bags, and seasonal items</p>
                 <span className="text-sm text-black font-medium group-hover:underline">
-                  View Collection
+                  Shop Accessories
                 </span>
               </div>
             </Link>
@@ -122,15 +122,15 @@ export default function HomePage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Classic Chronograph", price: "NPR 1,85,000", rating: 4.9, image: "bg-gray-900" },
-              { name: "Diamond Solitaire", price: "NPR 95,000", rating: 4.8, image: "bg-amber-100" },
-              { name: "Leather Handbag", price: "NPR 35,000", rating: 4.7, image: "bg-rose-100" },
-              { name: "Silk Scarf", price: "NPR 18,000", rating: 4.9, image: "bg-blue-100" }
+              { name: "Organic Cotton Dress", price: "NPR 4,500", rating: 4.9, image: "bg-rose-100" },
+              { name: "Linen Blazer", price: "NPR 6,200", rating: 4.8, image: "bg-blue-100" },
+              { name: "Silk Scarf", price: "NPR 1,800", rating: 4.7, image: "bg-amber-100" },
+              { name: "Cashmere Sweater", price: "NPR 8,500", rating: 4.9, image: "bg-gray-100" }
             ].map((product, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="aspect-square bg-gray-50 rounded-2xl mb-4 relative overflow-hidden">
                   <div className={`absolute inset-0 ${product.image} flex items-center justify-center`}>
-                    <span className={`font-medium text-sm ${product.image === 'bg-gray-900' ? 'text-white' : 'text-gray-700'}`}>
+                    <span className="font-medium text-sm text-gray-700">
                       {product.name.toUpperCase()}
                     </span>
                   </div>
@@ -158,16 +158,16 @@ export default function HomePage() {
             The <span className="font-bold">Jara</span> Promise
           </h2>
           <p className="text-gray-600 mb-16 max-w-2xl mx-auto">
-            Every purchase is backed by our commitment to authenticity, quality, and exceptional service.
+            Every garment is crafted with care, using sustainable materials and ethical practices.
           </p>
           
           <div className="grid md:grid-cols-3 gap-12">
             <div>
               <div className="w-12 h-12 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white text-lg">✓</span>
+                <span className="text-white text-lg">🌿</span>
               </div>
-              <h3 className="text-lg font-medium text-black mb-2">Authentic Guarantee</h3>
-              <p className="text-gray-600 text-sm">Every item verified for authenticity</p>
+              <h3 className="text-lg font-medium text-black mb-2">Sustainable Materials</h3>
+              <p className="text-gray-600 text-sm">Eco-friendly fabrics and processes</p>
             </div>
             <div>
               <div className="w-12 h-12 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -178,10 +178,10 @@ export default function HomePage() {
             </div>
             <div>
               <div className="w-12 h-12 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white text-lg">💬</span>
+                <span className="text-white text-lg">↩️</span>
               </div>
-              <h3 className="text-lg font-medium text-black mb-2">Expert Support</h3>
-              <p className="text-gray-600 text-sm">Personalized service from our team</p>
+              <h3 className="text-lg font-medium text-black mb-2">Easy Returns</h3>
+              <p className="text-gray-600 text-sm">30-day hassle-free return policy</p>
             </div>
           </div>
         </div>
@@ -191,10 +191,10 @@ export default function HomePage() {
       <section className="py-24 bg-black text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-light mb-4">
-            Stay <span className="font-bold">Connected</span>
+            Stay <span className="font-bold">Stylish</span>
           </h2>
           <p className="text-gray-300 mb-12">
-            Be first to know about new arrivals and exclusive events.
+            Be first to know about new collections and exclusive offers.
           </p>
           <form className="flex gap-4 max-w-md mx-auto">
             <input 
