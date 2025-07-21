@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
-
+import Image from "next/image";
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -39,7 +39,7 @@ export default function LoginPage() {
             {/* Logo with proper fallback */}
             <div className="relative mb-4">
               {!logoError ? (
-                <img 
+                <Image 
                   src="/images/JARA.png" 
                   alt="Jara Group Logo" 
                   className="w-20 h-20 object-contain rounded-xl mx-auto"
