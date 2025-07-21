@@ -17,10 +17,32 @@ import {
   CheckCircle
 } from 'lucide-react';
 
+// Define types for better TypeScript support
+interface CartItem {
+  id: number;
+  name: string;
+  color: string;
+  size: string;
+  price: number;
+  quantity: number;
+  image: string;
+  inStock: boolean;
+  rating: number;
+  reviews: number;
+}
+
+interface RecommendedProduct {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  rating: number;
+}
+
 export default function EnhancedCart() {
   const router = useRouter();
   
-  const [cartItems, setCartItems] = useState([
+  const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: 1,
       name: "Plaid Shirt & Buttoned Skirt Set",
@@ -47,13 +69,13 @@ export default function EnhancedCart() {
     }
   ]);
 
-  const [promoCode, setPromoCode] = useState('');
-  const [isPromoApplied, setIsPromoApplied] = useState(false);
-  const [showGiftNote, setShowGiftNote] = useState(false);
-  const [giftNote, setGiftNote] = useState('');
-  const [savedItems, setSavedItems] = useState([]);
+  const [promoCode, setPromoCode] = useState<string>('');
+  const [isPromoApplied, setIsPromoApplied] = useState<boolean>(false);
+  const [showGiftNote, setShowGiftNote] = useState<boolean>(false);
+  const [giftNote, setGiftNote] = useState<string>('');
+  const [savedItems, setSavedItems] = useState<CartItem[]>([]);
 
-  const updateQuantity = (id, newQuantity) => {
+  const updateQuantity = (id: number, newQuantity: number): void => {
     if (newQuantity === 0) {
       setCartItems(cartItems.filter(item => item.id !== id));
     } else {
@@ -63,21 +85,21 @@ export default function EnhancedCart() {
     }
   };
 
-  const removeItem = (id) => {
+  const removeItem = (id: number): void => {
     setCartItems(cartItems.filter(item => item.id !== id));
   };
 
-  const saveForLater = (item) => {
+  const saveForLater = (item: CartItem): void => {
     setSavedItems([...savedItems, item]);
     setCartItems(cartItems.filter(i => i.id !== item.id));
   };
 
-  const moveToCart = (item) => {
+  const moveToCart = (item: CartItem): void => {
     setCartItems([...cartItems, item]);
     setSavedItems(savedItems.filter(i => i.id !== item.id));
   };
 
-  const applyPromo = () => {
+  const applyPromo = (): void => {
     if (promoCode.toLowerCase() === 'save10') {
       setIsPromoApplied(true);
     }
@@ -89,7 +111,7 @@ export default function EnhancedCart() {
   const shipping = subtotal > 50 ? 0 : 9.99;
   const total = subtotal - discount + tax + shipping;
 
-  const recommendedProducts = [
+  const recommendedProducts: RecommendedProduct[] = [
     { id: 101, name: "Silk Scarf", price: 18.99, image: "/api/placeholder/80/80", rating: 4.7 },
     { id: 102, name: "Leather Handbag", price: 79.99, image: "/api/placeholder/80/80", rating: 4.9 },
     { id: 103, name: "Statement Earrings", price: 24.99, image: "/api/placeholder/80/80", rating: 4.6 },
@@ -381,7 +403,7 @@ export default function EnhancedCart() {
                     value={giftNote}
                     onChange={(e) => setGiftNote(e.target.value)}
                     className="w-full mt-3 p-3 border rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black"
-                    rows="3"
+                    rows={3}
                   />
                 )}
               </div>
