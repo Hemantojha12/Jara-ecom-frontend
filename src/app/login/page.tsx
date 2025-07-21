@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
-import Image from "next/image";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const handleSubmit = async () => {
     setIsLoading(true);
@@ -36,22 +36,20 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 space-y-6">
           {/* Header */}
           <div className="text-center space-y-2">
-            {/* Static Logo */}
+            {/* Logo with proper fallback */}
             <div className="relative mb-4">
-              <Image 
-                src="/images/JARA.png" 
-                alt="Jara Group Logo" 
-                className="w-20 h-20 object-contain rounded-xl mx-auto"
-                onError={(e) => {
-                  // Fallback to initials if logo fails to load
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              {/* Fallback logo with initials */}
-              <div className="hidden items-center justify-center w-20 h-20 bg-black rounded-xl mx-auto">
-                <span className="text-2xl font-bold text-white">JG</span>
-              </div>
+              {!logoError ? (
+                <img 
+                  src="/images/JARA.png" 
+                  alt="Jara Group Logo" 
+                  className="w-20 h-20 object-contain rounded-xl mx-auto"
+                  onError={() => setLogoError(true)}
+                />
+              ) : (
+                <div className="flex items-center justify-center w-20 h-20 bg-black rounded-xl mx-auto">
+                  <span className="text-2xl font-bold text-white">JG</span>
+                </div>
+              )}
             </div>
             <h1 className="text-3xl font-bold text-black">Jara Group</h1>
             <p className="text-gray-600">Welcome back! Please sign in to continue</p>
@@ -183,7 +181,7 @@ export default function LoginPage() {
 
           {/* Sign Up Link */}
           <p className="text-center text-sm text-gray-600">
-           Don&apos;t have an account??{' '}
+            Don't have an account?{' '}
             <a href="#" className="text-black hover:text-gray-600 transition-colors font-medium">
               Sign up here
             </a>
