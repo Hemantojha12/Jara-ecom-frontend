@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
 import Image from "next/image";
+
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function LoginPage() {
     alert('Login functionality would be implemented here');
   };
 
-  const handleSocialLogin = (provider) => {
+  const handleSocialLogin = (provider: string) => {
     alert(`${provider} login would be implemented here`);
   };
 
@@ -42,7 +43,9 @@ export default function LoginPage() {
                 <Image 
                   src="/images/JARA.png" 
                   alt="Jara Group Logo" 
-                  className="w-20 h-20 object-contain rounded-xl mx-auto"
+                  width={80}
+                  height={80}
+                  className="object-contain rounded-xl mx-auto"
                   onError={() => setLogoError(true)}
                 />
               ) : (
@@ -182,7 +185,6 @@ export default function LoginPage() {
           {/* Sign Up Link */}
           <p className="text-center text-sm text-gray-600">
            Don&apos;t have an account?{' '}
-
             <a href="#" className="text-black hover:text-gray-600 transition-colors font-medium">
               Sign up here
             </a>
