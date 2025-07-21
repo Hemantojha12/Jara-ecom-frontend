@@ -69,7 +69,7 @@ export default function HomePage() {
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
                   <span className="text-2xl">👗</span>
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">Women's Collection</h3>
+                <h3 className="text-xl font-medium text-black mb-3">Women&apos;s Collection</h3>
                 <p className="text-gray-600 text-sm mb-6">Elegant dresses, tops, and bottoms</p>
                 <span className="text-sm text-black font-medium group-hover:underline">
                   Shop Women
@@ -82,14 +82,14 @@ export default function HomePage() {
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
                   <span className="text-2xl">👔</span>
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">Men's Collection</h3>
+                <h3 className="text-xl font-medium text-black mb-3">Men&apos;s Collection</h3>
                 <p className="text-gray-600 text-sm mb-6">Modern shirts, jackets, and trousers</p>
                 <span className="text-sm text-black font-medium group-hover:underline">
                   Shop Men
                 </span>
               </div>
             </Link>
-            
+           
             <Link href="/collections/accessories" className="group">
               <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-500">
                 <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-gray-200 transition-colors">

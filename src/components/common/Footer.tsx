@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold tracking-tight">JARA</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Nepal's premier destination for luxury shopping. Curating the finest products
+              Nepal&apos;s premier destination for luxury shopping. Curating the finest products
               with uncompromising quality and service.
             </p>
           </div>
