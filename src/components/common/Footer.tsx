@@ -1,127 +1,115 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { Separator } from "@/components/ui/seperator";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <Link href="/" className="inline-block">
-              <h4 className="text-xl font-bold mb-4">JARA GROUPS</h4>
-            </Link>
-            <p className="text-gray-300 mb-4">
-              Nepal's premier destination for luxury shopping. Discover authentic premium products with unmatched service.
+    <footer className="bg-black text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold tracking-tight">JARA</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Nepal's premier destination for luxury shopping. Curating the finest products
+              with uncompromising quality and service.
             </p>
-            <div className="flex space-x-4">
-              <Link 
-                href="#" 
-                className="w-8 h-8 bg-gray-700 rounded-full cursor-pointer hover:bg-gray-600 transition-colors flex items-center justify-center"
-                aria-label="Facebook"
-              >
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link 
-                href="#" 
-                className="w-8 h-8 bg-gray-700 rounded-full cursor-pointer hover:bg-gray-600 transition-colors flex items-center justify-center"
-                aria-label="Instagram"
-              >
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link 
-                href="#" 
-                className="w-8 h-8 bg-gray-700 rounded-full cursor-pointer hover:bg-gray-600 transition-colors flex items-center justify-center"
-                aria-label="Twitter"
-              >
-                <span className="sr-only">Twitter</span>
-              </Link>
-            </div>
           </div>
-          <div>
-            <h5 className="font-semibold mb-4">Quick Links</h5>
-            <ul className="space-y-2 text-gray-300">
+
+          {/* Shop */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-white">Shop</h4>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
+                <Link href="/collections/new" className="text-gray-400 hover:text-white transition-colors">
+                  New Arrivals
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
+                <Link href="/collections/luxury" className="text-gray-400 hover:text-white transition-colors">
+                  Luxury Collection
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-white transition-colors">
-                  Careers
+                <Link href="/collections/brands" className="text-gray-400 hover:text-white transition-colors">
+                  Featured Brands
                 </Link>
               </li>
               <li>
-                <Link href="/press" className="hover:text-white transition-colors">
-                  Press
+                <Link href="/collections/sale" className="text-gray-400 hover:text-white transition-colors">
+                  Sale
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h5 className="font-semibold mb-4">Customer Service</h5>
-            <ul className="space-y-2 text-gray-300">
+
+          {/* Customer Service */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-white">Customer Service</h4>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/help" className="hover:text-white transition-colors">
-                  Help Center
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/returns" className="hover:text-white transition-colors">
-                  Returns
-                </Link>
-              </li>
-              <li>
-                <Link href="/shipping" className="hover:text-white transition-colors">
+                <Link href="/shipping" className="text-gray-400 hover:text-white transition-colors">
                   Shipping Info
                 </Link>
               </li>
               <li>
-                <Link href="/size-guide" className="hover:text-white transition-colors">
+                <Link href="/returns" className="text-gray-400 hover:text-white transition-colors">
+                  Returns & Exchanges
+                </Link>
+              </li>
+              <li>
+                <Link href="/size-guide" className="text-gray-400 hover:text-white transition-colors">
                   Size Guide
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h5 className="font-semibold mb-4">Contact Info</h5>
-            <div className="text-gray-300 space-y-2">
-              <p>Kathmandu, Nepal</p>
-              <p>
-                <Link 
-                  href="tel:+977-1-XXXXXXX" 
-                  className="hover:text-white transition-colors"
-                >
-                  Phone: +977-1-XXXXXXX
+
+          {/* Company */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-white">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+                  About Jara
                 </Link>
-              </p>
-              <p>
-                <Link 
-                  href="mailto:info@jaragroups.com" 
-                  className="hover:text-white transition-colors"
-                >
-                  Email: info@jaragroups.com
+              </li>
+              <li>
+                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors">
+                  Careers
                 </Link>
-              </p>
-              <p>Support: 24/7</p>
-            </div>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300">© 2025 Jara Groups. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-300 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="text-gray-300 hover:text-white transition-colors">
-              Cookie Policy
-            </Link>
+
+        <Separator className="my-12 bg-gray-800" />
+
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-sm text-gray-400">
+            © 2025 Jara Groups. All rights reserved.
+          </div>
+          <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <span>Secure payments by</span>
+            <div className="flex items-center space-x-3">
+              <span className="px-2 py-1 bg-gray-800 rounded text-xs">Fonepay</span>
+              <span className="px-2 py-1 bg-gray-800 rounded text-xs">Stripe</span>
+              <span className="px-2 py-1 bg-gray-800 rounded text-xs">COD</span>
+            </div>
           </div>
         </div>
       </div>
