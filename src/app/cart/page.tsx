@@ -102,7 +102,8 @@ export default function EnhancedCart() {
         <ShoppingBag className="w-12 h-12 text-gray-400" />
       </div>
       <h2 className="text-2xl font-medium text-gray-900 mb-4">Your cart is empty</h2>
-      <p className="text-gray-600 mb-8">Looks like you haven't added anything to your cart yet.</p>
+      <p className="text-gray-600 mb-8">Looks like you haven&apos;t added anything to your cart yet.</p>
+
       <button 
         onClick={() => router.push('/')}
         className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
