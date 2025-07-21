@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import HeroSection from '@/components/common/HeroSection';
+import NewsLetterSection from '@/components/common/NewsLetterSection';
 import { ArrowRight, Star } from 'lucide-react';
 
 export default function HomePage() {
@@ -187,31 +188,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter - Minimal */}
-      <section className="py-24 bg-black text-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-light mb-4">
-            Stay <span className="font-bold">Stylish</span>
-          </h2>
-          <p className="text-gray-300 mb-12">
-            Be first to know about new collections and exclusive offers.
-          </p>
-          <form className="flex gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
-              required
-            />
-            <button 
-              type="submit"
-              className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
+      {/* Newsletter Section */}
+      <NewsLetterSection />
+      
     </>
   );
 }
