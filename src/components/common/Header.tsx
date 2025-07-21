@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import { Search, ShoppingBag, User, Menu, Heart, Globe } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -26,11 +28,14 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo - Clickable and links to homepage */}
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-          <img 
-            src="/images/JARA.png" 
-            alt="Jara Group Logo"
-            className="w-20 h-15 object-contain"
-          />
+          <Image 
+  src="/images/JARA.png"
+  alt="Jara Group Logo"
+  width={80}
+  height={60} // Approximate based on h-15 (60px)
+  className="object-contain"
+/>
+
           {/* <div className="text-2xl font-bold tracking-tight bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
             JARA
           </div> */}

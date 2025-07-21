@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
+import Image from "next/image";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,7 +38,7 @@ export default function LoginPage() {
           <div className="text-center space-y-2">
             {/* Static Logo */}
             <div className="relative mb-4">
-              <img 
+              <Image 
                 src="/images/JARA.png" 
                 alt="Jara Group Logo" 
                 className="w-20 h-20 object-contain rounded-xl mx-auto"
