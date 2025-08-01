@@ -29,16 +29,12 @@ export default function Header() {
         {/* Logo - Clickable and links to homepage */}
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
           <Image 
-  src="/images/JARA.png"
-  alt="Jara Group Logo"
-  width={80}
-  height={60} // Approximate based on h-15 (60px)
-  className="object-contain"
-/>
-
-          {/* <div className="text-2xl font-bold tracking-tight bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
-            JARA
-          </div> */}
+            src="/images/JARA.png"
+            alt="Jara Group Logo"
+            width={80}
+            height={60}
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -79,7 +75,7 @@ export default function Header() {
                 EN
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent side="bottom" align="end">
               <DropdownMenuItem>English</DropdownMenuItem>
               <DropdownMenuItem>नेपाली</DropdownMenuItem>
             </DropdownMenuContent>
@@ -129,7 +125,7 @@ export default function Header() {
                 <User className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent side="bottom" align="end">
               <DropdownMenuItem>
                 <Link href="/account" className="w-full">
                   My Account
@@ -155,13 +151,13 @@ export default function Header() {
 
           {/* Shopping Bag */}
           <Link href="/cart">
-      <Button variant="ghost" size="sm" className="relative">
-        <ShoppingBag className="h-4 w-4" />
-        <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-black text-white text-xs flex items-center justify-center">
-          2
-        </span>
-      </Button>
-    </Link>
+            <Button variant="ghost" size="sm" className="relative">
+              <ShoppingBag className="h-4 w-4" />
+              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-black text-white text-xs flex items-center justify-center">
+                2
+              </span>
+            </Button>
+          </Link>
 
           {/* Mobile Menu */}
           <Sheet>
