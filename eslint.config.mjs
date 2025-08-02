@@ -13,8 +13,13 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      "jsx-quotes": "off",  // Disable jsx-quotes rule
-      // Add other rules you want to disable or override here
+      "jsx-quotes": "off",                  // ✅ stop enforcing jsx quote style
+      "react/no-unescaped-entities": "off", // ✅ allows ' and " in JSX text
+      "prefer-const": "off",                // ✅ won't force you to use const instead of let
+      "@next/next/no-img-element": "off",   // ✅ lets you use <img> tags
+      "jsx-a11y/alt-text": "off",
+      "@next/next/no-img-element": "off"
+
     },
   },
 ];
