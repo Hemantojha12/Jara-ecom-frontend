@@ -25,13 +25,13 @@ export default function AddressManagement() {
     phone: "",
     address: "",
   });
-  const [editingId, setEditingId] = useState(null);
+  const [editingId, setEditingId] = useState<number | null>(null);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleAddOrEdit = (e) => {
+  const handleAddOrEdit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (editingId !== null) {
@@ -51,7 +51,7 @@ export default function AddressManagement() {
     setFormOpen(false);
   };
 
-  const handleEditClick = (id) => {
+  const handleEditClick = (id: number) => {
     const addr = addresses.find((a) => a.id === id);
     if (!addr) return;
     setFormData({ name: addr.name, phone: addr.phone, address: addr.address });
@@ -59,7 +59,7 @@ export default function AddressManagement() {
     setFormOpen(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     if (confirm("Are you sure you want to delete this address?")) {
       setAddresses((prev) => prev.filter((a) => a.id !== id));
     }
