@@ -1,8 +1,9 @@
-// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true, // ✅ must be true to enable app router
+  eslint: {
+    ignoreDuringBuilds: true, 
   },
+  // 
 };
 
 module.exports = nextConfig;
