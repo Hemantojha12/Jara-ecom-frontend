@@ -2,10 +2,24 @@
 
 import { useState } from "react";
 
-export default function UserOrders() {
-  const [expandedOrder, setExpandedOrder] = useState(null);
+interface OrderItem {
+  name: string;
+  qty: number;
+  price: string;
+}
 
-  const orders = [
+interface Order {
+  id: string;
+  date: string;
+  total: string;
+  status: "Processing" | "Shipped" | "Delivered";
+  items: OrderItem[];
+}
+
+export default function UserOrders() {
+  const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
+
+  const orders: Order[] = [
     {
       id: "ORD-001",
       date: "July 20, 2025",
@@ -33,7 +47,7 @@ export default function UserOrders() {
   ];
 
   // Helper function for status badge colors
-  const getStatusStyles = (status) => {
+  const getStatusStyles = (status: Order["status"]): string => {
     switch (status) {
       case "Processing":
         return "bg-gray-100 text-gray-700 border border-gray-300";
