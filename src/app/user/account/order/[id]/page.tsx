@@ -1,4 +1,5 @@
-"use"
+"use client";
+
 import { useState } from "react";
 
 export default function UserOrders() {
@@ -20,27 +21,24 @@ export default function UserOrders() {
       date: "June 15, 2025",
       total: "$120.00",
       status: "Shipped",
-      items: [
-        { name: "Silk Scarf", qty: 2, price: "$60.00" },
-      ],
+      items: [{ name: "Silk Scarf", qty: 2, price: "$60.00" }],
     },
     {
       id: "ORD-003",
       date: "May 5, 2025",
       total: "$500.00",
       status: "Delivered",
-      items: [
-        { name: "Designer Shoes", qty: 1, price: "$500.00" },
-      ],
+      items: [{ name: "Designer Shoes", qty: 1, price: "$500.00" }],
     },
   ];
 
+  // Helper function for status badge colors
   const getStatusStyles = (status) => {
     switch (status) {
       case "Processing":
         return "bg-gray-100 text-gray-700 border border-gray-300";
       case "Shipped":
-        return "bg-gold-50 text-gold-600 border border-gold-400";
+        return "bg-yellow-50 text-yellow-600 border border-yellow-400";
       case "Delivered":
         return "bg-green-50 text-green-600 border border-green-400";
       default:
@@ -76,7 +74,7 @@ export default function UserOrders() {
               </div>
             </div>
 
-            {/* Expand/Collapse */}
+            {/* Expandable Details */}
             {expandedOrder === order.id && (
               <div className="mt-6 border-t border-gray-200 pt-4">
                 <h3 className="text-md font-medium mb-2">Order Items:</h3>
@@ -94,7 +92,7 @@ export default function UserOrders() {
                   ))}
                 </ul>
                 <div className="text-right">
-                  <button className="text-gold-600 hover:underline text-sm font-medium">
+                  <button className="text-yellow-600 hover:underline text-sm font-medium">
                     View Full Details →
                   </button>
                 </div>
@@ -107,7 +105,7 @@ export default function UserOrders() {
                 onClick={() =>
                   setExpandedOrder(expandedOrder === order.id ? null : order.id)
                 }
-                className="text-sm font-medium text-gray-700 hover:text-gold-600 transition"
+                className="text-sm font-medium text-gray-700 hover:text-yellow-600 transition"
               >
                 {expandedOrder === order.id ? "Hide Details" : "View Details"}
               </button>
