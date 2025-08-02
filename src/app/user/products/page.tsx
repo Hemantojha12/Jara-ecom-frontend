@@ -65,9 +65,18 @@ const products = [
   },
 ];
 
+// Define types for better TypeScript support
+interface Filters {
+  brands: string[];
+  priceRange: [number, number];
+  categories: string[];
+  discounts: number[];
+  availability: string[];
+}
+
 export default function ProductsPage() {
   const [sort, setSort] = useState("Newest");
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<Filters>({
     brands: [],
     priceRange: [50, 1000],
     categories: [],
@@ -76,45 +85,45 @@ export default function ProductsPage() {
   });
 
   // Handle filter changes
-  const handleBrandChange = (brand) => {
-    setFilters(prev => ({
+  const handleBrandChange = (brand: string) => {
+    setFilters((prev: Filters) => ({
       ...prev,
       brands: prev.brands.includes(brand)
-        ? prev.brands.filter(b => b !== brand)
+        ? prev.brands.filter((b: string) => b !== brand)
         : [...prev.brands, brand]
     }));
   };
 
-  const handleCategoryChange = (category) => {
-    setFilters(prev => ({
+  const handleCategoryChange = (category: string) => {
+    setFilters((prev: Filters) => ({
       ...prev,
       categories: prev.categories.includes(category)
-        ? prev.categories.filter(c => c !== category)
+        ? prev.categories.filter((c: string) => c !== category)
         : [...prev.categories, category]
     }));
   };
 
-  const handleDiscountChange = (discount) => {
-    setFilters(prev => ({
+  const handleDiscountChange = (discount: number) => {
+    setFilters((prev: Filters) => ({
       ...prev,
       discounts: prev.discounts.includes(discount)
-        ? prev.discounts.filter(d => d !== discount)
+        ? prev.discounts.filter((d: number) => d !== discount)
         : [...prev.discounts, discount]
     }));
   };
 
-  const handleAvailabilityChange = (availability) => {
-    setFilters(prev => ({
+  const handleAvailabilityChange = (availability: string) => {
+    setFilters((prev: Filters) => ({
       ...prev,
       availability: prev.availability.includes(availability)
-        ? prev.availability.filter(a => a !== availability)
+        ? prev.availability.filter((a: string) => a !== availability)
         : [...prev.availability, availability]
     }));
   };
 
-  const handlePriceRangeChange = (e) => {
+  const handlePriceRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
-    setFilters(prev => ({
+    setFilters((prev: Filters) => ({
       ...prev,
       priceRange: [prev.priceRange[0], value]
     }));
@@ -143,7 +152,7 @@ export default function ProductsPage() {
         const hasDiscount = product.discount !== null;
         const discountAmount = product.discount || 0;
         
-        const meetsDiscountRequirement = filters.discounts.some(filterDiscount => {
+        const meetsDiscountRequirement = filters.discounts.some((filterDiscount: number) => {
           if (filterDiscount === 10) return hasDiscount && discountAmount >= 10;
           if (filterDiscount === 20) return hasDiscount && discountAmount >= 20;
           if (filterDiscount === 50) return hasDiscount && discountAmount >= 50;
@@ -314,7 +323,7 @@ export default function ProductsPage() {
                     alt={product.name}
                     className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
-                      e.target.src = `https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center`;
+                      (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center`;
                     }}
                   />
                   
@@ -370,7 +379,7 @@ export default function ProductsPage() {
                   categories: [],
                   discounts: [],
                   availability: []
-                })}
+                } as Filters)}
                 className="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition"
               >
                 Clear All Filters
