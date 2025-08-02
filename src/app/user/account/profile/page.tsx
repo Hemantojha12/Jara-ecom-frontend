@@ -2,8 +2,16 @@
 
 import { useState } from "react";
 
+interface ProfileForm {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export default function ProfileSettings() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ProfileForm>({
     name: "Himansh",
     email: "himansh@example.com",
     phone: "+977 9800000000",
@@ -11,11 +19,11 @@ export default function ProfileSettings() {
     confirmPassword: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add your save logic here
     alert("Changes saved!");
